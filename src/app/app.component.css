@@ -27,7 +27,34 @@ input:checked ~ #page { /* when menu is open, transform the page */
     transition: all .3s linear; 
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
 }
-    
+ 
+input:not(:checked) ~ .container-config{
+    display: none;
+}
+
+.container-config{
+    position: absolute;
+    bottom: 10px;
+    left: -5px;
+}
+
+.btn-chat{
+    border-radius: 100%;
+    font-size: xx-large;
+    color: #ebebeb;
+    opacity: 0.5;
+    background-color: transparent;
+    border: none;
+}
+
+.num-msg-nao-lidas{
+    font-size: medium;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 39px;
+    left: 54px;
+}
+
 input:checked::after { content: '\00d7'; color: #ebebeb; background: transparent; transition-delay: -.1s; } 
     
     

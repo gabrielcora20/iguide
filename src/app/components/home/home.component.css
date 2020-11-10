@@ -13,3 +13,11 @@ img{
 .mr-button{
     margin-right: 10px;
 }
+
+.num-msg-nao-lidas{
+    font-size: medium;
+    border-radius: 100%;
+    position: absolute;
+    top: 86px;
+    right: 70px;
+}
