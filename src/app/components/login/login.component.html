@@ -1,0 +1,16 @@
+<div class="conteudo-login">
+    <div class="logo">
+        <img src="https://www.jing.fm/clipimg/full/115-1152777_profile-png-man-user-icon.png"/>
+    </div>
+    <div>
+        <fieldset class="form-group">
+            <input type="email" [(ngModel)]="usuario.email" class="form-control">
+            <label>E-mail</label>
+        </fieldset>
+        <fieldset class="form-group">
+            <input type="password"  [(ngModel)]="usuario.senha" class="form-control">
+            <label>Senha</label>
+        </fieldset>
+        <button (click)="validaLogin()" class="btn btn-primary btn-block">Entrar</button>
+    </div>
+</div>

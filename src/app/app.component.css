@@ -1,0 +1,91 @@
+#page{
+    width: 100vw; height: 812px;
+    /* background: url('https://upload.wikimedia.org/wikipedia/commons/a/a8/Antarctica_blue_white_blue.jpg') #0b674c center/cover;  */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+    transition: all .3s linear;     
+}
+    
+input[type="checkbox"] { /* menu control */
+    width: 30px; height: 30px; z-index: 1; margin: 0; outline: none; border: none;
+    appearance: initial; -webkit-appearance: initial; -moz-appearance:initial; 
+    border-top-left-radius: 10px;
+}
+
+input::after { /* menu icon */
+    display: block;
+    content: '\2261';
+    font: bold 37pt/42px 'georgia';
+    text-indent: 10px;
+    border-top-left-radius: 10px;
+    transition-delay: .25s;
+    color: #fff;
+    opacity: 0.5;
+}
+    
+input:checked ~ #page { /* when menu is open, transform the page */
+    transform: translateX(40%) rotateY(10deg) scale(0.8)  ; transform-origin: right center;
+    transition: all .3s linear; 
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+}
+    
+input:checked::after { content: '\00d7'; color: #ebebeb; background: transparent; transition-delay: -.1s; } 
+    
+    
+#menu, #page, input{ position: absolute; }
+    
+#wrapper {
+    width: 100vw; height: 812px; position: relative;
+    /* margin: auto;
+    margin-top: 50px; */
+    box-shadow: 0 0 20px lightgrey; 
+    /* border-radius: 10px;  */
+    background: linear-gradient(87deg, black, #3c3a3a);
+    overflow: hidden;
+}
+    
+#menu {
+    /* width: 600px;  */
+    padding-top: 86px;
+    padding-right: 250px;
+    width: 812px;
+    margin: 45px 10px 10px 45px; 
+}
+   
+#menu > ul{ /* css ul list style */
+	list-style:none;
+	padding:0;
+	margin:0;
+    overflow-y: auto; /* enable scroll for menu items */
+    /* height:95%; */
+    height: 546px;    
+}
+
+#menu > ul > li{ /* css ul list style */
+	padding: 7px 0 7px 0;    
+}
+
+#menu > ul > li > a { /* links */
+    display: block;
+    padding: 6px 4px 6px 4px;
+    color: #989898;
+    transition: 0.3s;
+	text-decoration: none;
+}
+#menu > ul > li > a.active { /* links */
+    border-bottom: 1px solid #f3eded; 
+    color: #f3eded;   
+}
+
+/* i {
+    display: inline-block;
+    width: 45px; height: 45px;
+    background-color: #d7e59f;
+    margin: 30px; 
+    border-radius: 50%;
+}  */
+    
+@media (max-width: 100vw){
+    #wrapper{ height: 812px; }
+    #menu {width: 100vw;} 
+    i{width: 100%; height: 2vw; margin: 2.5vw;}
+}

@@ -1,0 +1,36 @@
+.conteudo-login{
+    padding: 10px;
+}
+.conteudo-login .logo{
+    text-align: center;
+    margin: 50px;
+}
+
+.conteudo-login .logo img{
+    border-radius: 100%;
+    width: 30%;
+    background-color: rgb(240, 234, 234);
+}
+  
+  ::-webkit-input-placeholder {
+    direction: rtl;
+  }
+  
+  fieldset.form-group {
+    position: relative;
+  }
+  
+  label {
+    position: absolute;
+    top: .5rem;
+    left: 1rem;
+    transition: all .1s ease-in-out;
+    cursor: text;
+  }
+  
+  :focus + label {
+    color: #66afe9;
+    top: -.9rem;
+    left: 0.5rem;
+    background: white;
+  }

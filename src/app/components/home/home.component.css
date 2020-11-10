@@ -1,0 +1,15 @@
+img{
+    height: -webkit-fill-available;
+}
+
+#carouselHome{
+    height: -webkit-fill-available;
+}
+
+.ml-button{
+    margin-left: 10px;
+}
+
+.mr-button{
+    margin-right: 10px;
+}
