@@ -1,9 +1,14 @@
-<div id=wrapper>
+<div *ngIf="userInfos.logado" class="wrapper">
     <input type=checkbox>
     <div id=menu>
         <ul>
-            <li><a href="http://www.yahoo.com" target="_blank" rel="nofollow">Rotas</a></li>
-            <li><a href="http://www.google.com" target="_blank" rel="nofollow">Guias</a></li>
+            <li><a routerLink="/home" routerLinkActive="active" rel="nofollow">Home</a></li>
+            <li *ngIf="!userInfos.tipoUsuario"><a routerLink="/rota" routerLinkActive="active" rel="nofollow">Rotas</a></li>
+            <li *ngIf="!userInfos.tipoUsuario"><a routerLink="/guia" routerLinkActive="active" rel="nofollow">Guias</a></li>
+
+            <li *ngIf="userInfos.tipoUsuario"><a routerLink="/rota-guia" routerLinkActive="active" rel="nofollow">Rotas</a></li>
+            <!-- <li><a routerLink="/guia" routerLinkActive="active" rel="nofollow">Guias</a></li> -->
+
             <!-- <li><a href="http://www.facebook.com" target="_blank" rel="nofollow">Facebook</a></li>
             <li><a href="http://www.flickr.com" target="_blank" rel="nofollow">Flickr</a></li>
             <li><a class="active" href="http://www.flickr.com" target="_blank" rel="nofollow">Flickr</a></li>
@@ -37,8 +42,12 @@
     <div class="container-config">
         <!-- <a class="btn btn-secondary">Configurações <i class="fa fa-cogs"></i></a> -->
         <a class="btn btn-secondary btn-chat"><i class="fa fa-comments"></i> <span class="badge badge-danger num-msg-nao-lidas">5</span></a>
+        <a class="btn btn-secondary btn-log-off" (click)="deslogar()"><i class="fa fa-power-off"></i></a>
     </div>
     <div id="page">        
         <router-outlet></router-outlet>
     </div>
+</div>
+<div *ngIf="!userInfos.logado" class="wrapper login">
+    <app-login ></app-login>
 </div>
