@@ -1,0 +1,108 @@
+ul > .item {
+    display: flex; 
+    flex-direction: column;
+    width: 150px;
+    height: 200px;
+} 
+/* .content {
+     width: 90%;
+    margin:auto;
+    display: flex;
+    margin-top: 15px;
+    flex-direction: column;
+} */
+
+.content {
+    margin: auto;
+    display: flex;
+    margin-top: 15px;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 721px;
+    margin-top: 60px;
+}
+
+.cabecalho{
+    position: absolute;
+    right: 153px;
+    top: 5px;
+    color: #6c757d;
+    font-family: -webkit-pictograph;
+}
+
+.cabecalho-turistas{
+    color: #6c757d;
+    font-family: -webkit-pictograph;
+}
+
+.container-main{
+    display: flex;
+    background-color: #fff;
+    height: 812px;
+}
+
+::-webkit-input-placeholder {
+    direction: rtl;
+  }
+  
+  fieldset.form-group {
+    position: relative;
+  }
+  
+  label {
+    position: absolute;
+    top: .5rem;
+    left: 1rem;
+    transition: all .1s ease-in-out;
+    cursor: text;
+    /* background-color: transparent; */
+  }
+  
+  :focus + label {
+    color: #66afe9;
+    top: -.9rem;
+    left: 0.5rem;
+    background-color: #fff;
+    /* border-color: black;
+    box-sizing: border-box;
+    border-radius: 20px; */
+    /* background: transparent; */
+  }
+  
+  input{
+    padding-left: 73px;
+  }
+  
+  input:focus {
+    padding-left: 12px;
+  }
+
+  input.descricao:focus {
+    padding-left: 163px;
+  }
+
+  .container-form{
+      margin: 15px;
+  }
+
+  .content{
+      width: 100%;
+  }
+
+  .content .buttons button{
+    width: 40%;
+    margin: 5%;
+  }
+
+  .table{
+    margin: 15px;
+    width: 92%;
+  }
+
+.table th{
+    font-size: 12px;
+}
+
+.table td{
+    font-size: 12px;
+}

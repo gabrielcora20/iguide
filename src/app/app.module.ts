@@ -6,18 +6,18 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
-import { RotaComponent } from './components/turista/rota/rota.component';
-import { GuiaComponent } from './components/turista/guia/guia.component';
-import { GuiaRotaComponent } from './components/guia/guia-rota/guia-rota.component';
+import { GrupoComponent } from './components/guia/grupo/grupo.component';
+import { EditGrupoComponent } from './components/guia/edit-grupo/edit-grupo.component';
+import { MeuGrupoComponent } from './components/turista/meu-grupo/meu-grupo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RotaComponent,
-    GuiaComponent,
-    GuiaRotaComponent
+    GrupoComponent,
+    EditGrupoComponent,
+    MeuGrupoComponent
   ],
   imports: [
     BrowserModule,

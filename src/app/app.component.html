@@ -3,10 +3,11 @@
     <div id=menu>
         <ul>
             <li><a routerLink="/home" routerLinkActive="active" rel="nofollow">Home</a></li>
-            <li *ngIf="!userInfos.tipoUsuario"><a routerLink="/rota" routerLinkActive="active" rel="nofollow">Rotas</a></li>
-            <li *ngIf="!userInfos.tipoUsuario"><a routerLink="/guia" routerLinkActive="active" rel="nofollow">Guias</a></li>
-
-            <li *ngIf="userInfos.tipoUsuario"><a routerLink="/rota-guia" routerLinkActive="active" rel="nofollow">Rotas</a></li>
+            <!-- <li *ngIf="!userInfos.tipoUsuario"><a routerLink="/rota" routerLinkActive="active" rel="nofollow">Rotas</a></li> -->
+            <li *ngIf="!userInfos.tipoUsuario"><a routerLink="/meu-grupo" routerLinkActive="active" rel="nofollow">Meu Grupo</a></li>
+            
+            <!-- <li *ngIf="userInfos.tipoUsuario"><a routerLink="/rota-guia" routerLinkActive="active" rel="nofollow">Rotas</a></li> -->
+            <li *ngIf="userInfos.tipoUsuario"><a routerLink="/grupo" routerLinkActive="active" rel="nofollow">Grupos</a></li>
             <!-- <li><a routerLink="/guia" routerLinkActive="active" rel="nofollow">Guias</a></li> -->
 
             <!-- <li><a href="http://www.facebook.com" target="_blank" rel="nofollow">Facebook</a></li>
