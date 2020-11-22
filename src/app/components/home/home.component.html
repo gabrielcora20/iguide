@@ -9,7 +9,7 @@
     <div class="carousel-inner">
       
       <div class="carousel-item active" *ngIf="userInfos.tipoUsuario">
-        <img src="./../../assets/img/foto_masp.jpeg" class="d-block w-100" alt="...">
+        <img src="./assets/img/foto_masp.jpeg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-md-block">
           <h5>Você está localizado em São Paulo, na região da Avenida Paulista</h5>
           <p>Visualize em tempo real onde estão os turistas integrantes de seu grupo</p>
@@ -19,7 +19,7 @@
       </div>
 
       <div class="carousel-item active" *ngIf="!userInfos.tipoUsuario">
-        <img src="./../../assets/img/foto_masp.jpeg" class="d-block w-100" alt="...">
+        <img src="./assets/img/foto_masp.jpeg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-md-block">
           <h5>Você é integrante de um grupo que está localizado em São Paulo, na região da Avenida Paulista</h5>
           <p>Visualize informações sobre seu grupo</p>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="carousel-item" *ngIf="userInfos.tipoUsuario">
-        <img src="./../../assets/img/foto_paris.jpeg" class="d-block w-100" alt="...">
+        <img src="./assets/img/foto_paris.jpeg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-md-block">
           <h5>Grupos</h5>
           <p>Consulte seus grupos ou crie um novo</p>
@@ -38,11 +38,11 @@
       </div>
 
       <div class="carousel-item">
-        <img src="./../../assets/img/foto_praia.jpeg" class="d-block w-100" alt="...">
+        <img src="./assets/img/foto_praia.jpeg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-md-block">
           <h5>Mensagens</h5>
           <p>Visualize suas mensagens</p>
-          <button class="btn btn-primary ml-button">Visualizar <span class="badge badge-danger num-msg-nao-lidas">5</span></button>
+          <button class="btn btn-primary ml-button" routerLink="/chat">Visualizar <span class="badge badge-danger num-msg-nao-lidas">5</span></button>
         </div>
       </div>
     </div>

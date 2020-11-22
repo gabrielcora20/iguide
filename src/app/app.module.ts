@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { GrupoComponent } from './components/guia/grupo/grupo.component';
 import { EditGrupoComponent } from './components/guia/edit-grupo/edit-grupo.component';
 import { MeuGrupoComponent } from './components/turista/meu-grupo/meu-grupo.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MeuGrupoComponent } from './components/turista/meu-grupo/meu-grupo.comp
     HomeComponent,
     GrupoComponent,
     EditGrupoComponent,
-    MeuGrupoComponent
+    MeuGrupoComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

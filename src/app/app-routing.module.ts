@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ChatComponent } from './components/chat/chat.component';
 import { EditGrupoComponent } from './components/guia/edit-grupo/edit-grupo.component';
 import { GrupoComponent } from './components/guia/grupo/grupo.component';
 import { HomeComponent } from './components/home/home.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'grupo', component: GrupoComponent },
   { path: 'edit-grupo/:id', component: EditGrupoComponent },
-  { path: 'meu-grupo', component: MeuGrupoComponent }
+  { path: 'meu-grupo', component: MeuGrupoComponent },
+  { path: 'chat', component: ChatComponent }
 ];
 
 @NgModule({
