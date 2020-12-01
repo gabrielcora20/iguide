@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { userInfos } from '../environments/user-infos' 
+import { userInfos } from '../environments/user-infos'
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,8 @@ import { userInfos } from '../environments/user-infos'
 })
 export class AppComponent {
   title = 'iguide';
+
+  grupo: any = {};
 
   userInfos = userInfos;
 

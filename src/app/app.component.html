@@ -4,10 +4,12 @@
         <ul>
             <li><a routerLink="/home" routerLinkActive="active" rel="nofollow">Home</a></li>
             <!-- <li *ngIf="!userInfos.tipoUsuario"><a routerLink="/rota" routerLinkActive="active" rel="nofollow">Rotas</a></li> -->
-            <li *ngIf="!userInfos.tipoUsuario"><a routerLink="/meu-grupo" routerLinkActive="active" rel="nofollow">Meu Grupo</a></li>
-            
+            <li *ngIf="!userInfos.tipoUsuario"><a routerLink="/meu-grupo" routerLinkActive="active" rel="nofollow">Meu
+                    Grupo</a></li>
+
             <!-- <li *ngIf="userInfos.tipoUsuario"><a routerLink="/rota-guia" routerLinkActive="active" rel="nofollow">Rotas</a></li> -->
-            <li *ngIf="userInfos.tipoUsuario"><a routerLink="/grupo" routerLinkActive="active" rel="nofollow">Grupos</a></li>
+            <li *ngIf="userInfos.tipoUsuario"><a routerLink="/grupo" routerLinkActive="active" rel="nofollow">Grupos</a>
+            </li>
             <!-- <li><a routerLink="/guia" routerLinkActive="active" rel="nofollow">Guias</a></li> -->
 
             <!-- <li><a href="http://www.facebook.com" target="_blank" rel="nofollow">Facebook</a></li>
@@ -37,18 +39,68 @@
             <li><a href="http://www.flickr.com" target="_blank" rel="nofollow">Flickr</a></li>
             <li><a href="http://www.flickr.com" target="_blank" rel="nofollow">Flickr</a></li>
             <li><a href="http://www.flickr.com" target="_blank" rel="nofollow">Flickr</a></li> -->
-        
+
         </ul>
     </div>
     <div class="container-config">
         <!-- <a class="btn btn-secondary">Configurações <i class="fa fa-cogs"></i></a> -->
-        <a class="btn btn-secondary btn-chat" routerLink="/chat"><i class="fa fa-comments"></i> <span class="badge badge-danger num-msg-nao-lidas">5</span></a>
-        <a class="btn btn-secondary btn-log-off" (click)="deslogar()"><i class="fa fa-power-off"></i></a>
+        <!-- <a class="btn btn-secondary btn-chat" routerLink="/chat"><i class="fa fa-comments"></i> <span
+                class="badge badge-danger num-msg-nao-lidas">5</span></a> -->
+        <a class="btn btn-secondary btn-chat" data-toggle="modal" data-target="#modalConviteGrupo"><i
+                class="fas fa-person-booth"></i><span class="badge badge-danger num-msg-nao-lidas">!</span></a>
+        <a class="btn btn-secondary btn-log-off"><i class="fa fa-power-off"></i></a>
     </div>
-    <div id="page">        
+    <div id="page">
         <router-outlet></router-outlet>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalConviteGrupo" tabindex="-1" role="dialog" aria-labelledby="modalConviteGrupoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalConviteGrupolLabel">Novo convite</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-form">
+                        <fieldset class="form-group">
+                            <!-- <input type="text" disabled [(ngModel)]="grupo.guia" class="form-control guia-input"> -->
+                            <label>Guia Responsável: {{grupo.guia}}</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <!-- <input type="text" disabled [(ngModel)]="grupo.nome" class="form-control nome-input"> -->
+                            <label>Nome: {{grupo.nome}}</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <!-- <input type="text" disabled [(ngModel)]="grupo.descricao" class="form-control descricao-input"> -->
+                            <label>Descrição do Trajeto: {{grupo.descricao}}</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <!-- <input type="date" disabled [(ngModel)]="grupo.dataTrajeto" class="form-control data-input"> -->
+                            <label>Data do Trajeto: {{grupo.dataTrajeto}}</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <!-- <input type="text" disabled [(ngModel)]="grupo.horarioInicio" class="form-control horario-inicio-input"> -->
+                            <label>Horário de Inicio: {{grupo.horarioInicio}}</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <!-- <input type="text" disabled [(ngModel)]="grupo.horarioFim" class="form-control horario-fim-input"> -->
+                            <label>Horário de Término: {{grupo.horarioFim}}</label>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Recusar</button>
+                    <button type="button" class="btn btn-primary">Aceitar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div *ngIf="!userInfos.logado" class="wrapper login">
-    <app-login ></app-login>
+    <app-login></app-login>
 </div>

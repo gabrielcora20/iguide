@@ -11,13 +11,56 @@ ul > .item {
     margin-top: 15px;
     flex-direction: column;
 } */
+.btn-encerrar{
+  margin-left: 15%;
+  /* margin-right: 5px; */
+  max-width: 70%;
+}
+
+.btn-adicionar-turista{
+  position: absolute;
+  right: 17px;
+  top: 429px;
+}
+
+input:focus {
+  padding-left: 12px !important;
+}
+
+.nome-input {
+  padding-left: 73px !important;
+}
+
+.descricao-input {
+  padding-left: 175px !important;
+}
+
+.data-input {
+  padding-left: 130px !important;
+}
+
+.horario-inicio-input {
+  padding-left: 144px !important;
+}
+
+.horario-fim-input {
+  padding-left: 164px !important;
+}
+
+.email-turista-input {
+  padding-left: 70px !important;
+}
+
+.btn-convidar-turista{
+  margin-top: 15px;
+}
 
 .content {
     margin: auto;
     display: flex;
     margin-top: 15px;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: unset;
     max-height: 721px;
     margin-top: 60px;
 }
@@ -105,4 +148,9 @@ ul > .item {
 
 .table td{
     font-size: 12px;
+}
+
+.btn-remove{
+  font-size: 13px;
+  padding: 3px;
 }

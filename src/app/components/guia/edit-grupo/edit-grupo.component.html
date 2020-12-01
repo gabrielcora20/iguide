@@ -7,43 +7,87 @@
         </div>
         <div class="container-form">
             <fieldset class="form-group">
-                <input type="text" [(ngModel)]="grupo.nome" class="form-control">
+                <input type="text" [(ngModel)]="grupo.nome" class="form-control nome-input">
                 <label>Nome</label>
             </fieldset>
             <fieldset class="form-group">
-                <input type="text" [(ngModel)]="grupo.descricao" class="form-control">
+                <input type="text" [(ngModel)]="grupo.descricao" class="form-control descricao-input">
                 <label>Descrição do Trajeto</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="date" [(ngModel)]="grupo.dataTrajeto" class="form-control data-input">
+                <label>Data do Trajeto</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="text" [(ngModel)]="grupo.horarioInicio" class="form-control horario-inicio-input">
+                <label>Horário de Inicio</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="text" [(ngModel)]="grupo.horarioFim" class="form-control horario-fim-input">
+                <label>Horário de Término</label>
             </fieldset>
         </div>
         <div class="text-center">
             <h4 class="cabecalho-turistas">Turistas</h4>
+
+            <button class="btn btn-primary btn-sm btn-adicionar-turista">Novo</button>
         </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="container-form">
+                    <fieldset class="form-group">
+                        <input type="text" [(ngModel)]="turista.email" class="form-control email-turista-input">
+                        <label>E-mail</label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-primary btn-convidar-turista">Convidar</button>
+            </div>
+        </div>
+        
+
+
         <table class="table">
             <thead>
                 <tr>
-                    <th>Nome</th>    
+                    <th></th>
+                    <th>Nome</th>
                     <th>Email</th>
                     <th>Telefone</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td>
+                        <button class="btn btn-danger btn-sm btn-remove"><i class="fas fa-trash"></i></button>
+                    </td>
                     <td>Turista 1</td>
                     <td>turista1@gmail.com</td>
                     <td>(11) 11 11111-1111</td>
                 </tr>
                 <tr>
+                    <td>
+                        <button class="btn btn-danger btn-sm btn-remove"><i class="fas fa-trash"></i></button>
+                    </td>
                     <td>Turista 2</td>
                     <td>turista2@gmail.com</td>
                     <td>(11) 11 11111-1111</td>
                 </tr>
                 <tr>
+                    <td>
+                        <button class="btn btn-danger btn-sm btn-remove"><i class="fas fa-trash"></i></button>
+                    </td>
                     <td>Turista 3</td>
                     <td>turista3@gmail.com</td>
                     <td>(11) 11 11111-1111</td>
                 </tr>
             </tbody>
         </table>
+
+        <button class="btn btn-danger btn-sm btn-block btn-encerrar">Encerrar</button>
+
         <!-- <table class="table">
             <thead>
               <tr>

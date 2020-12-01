@@ -1,18 +1,31 @@
 <div class="container-main">
     <div class="content">
         <h3 class="cabecalho">Grupo</h3>
-        <!-- <div class="buttons"> -->
-            <!-- <button class="btn btn-secondary btn-sm" routerLink="/grupo">Voltar</button> -->
-            <button class="btn btn-danger btn-block btn-sair-grupo">Sair do grupo</button>
-        <!-- </div> -->
+        <button class="btn btn-danger btn-block btn-sair-grupo">Sair do grupo</button>
         <div class="container-form">
             <fieldset class="form-group">
-                <input type="text" [(ngModel)]="grupo.nome" class="form-control" disabled value="Ibirapuera">
+                <input type="text" disabled [(ngModel)]="grupo.guia" class="form-control guia-input">
+                <label>Guia Responsável</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="text" disabled [(ngModel)]="grupo.nome" class="form-control nome-input">
                 <label>Nome</label>
             </fieldset>
             <fieldset class="form-group">
-                <input type="text" [(ngModel)]="grupo.descricao" class="form-control" disabled value="Passeio ao Parque do Ibirapuera">
+                <input type="text" disabled [(ngModel)]="grupo.descricao" class="form-control descricao-input">
                 <label>Descrição do Trajeto</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="date" disabled [(ngModel)]="grupo.dataTrajeto" class="form-control data-input">
+                <label>Data do Trajeto</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="text" disabled [(ngModel)]="grupo.horarioInicio" class="form-control horario-inicio-input">
+                <label>Horário de Inicio</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="text" disabled [(ngModel)]="grupo.horarioFim" class="form-control horario-fim-input">
+                <label>Horário de Término</label>
             </fieldset>
         </div>
         <div class="text-center">
@@ -21,7 +34,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Nome</th>    
+                    <th>Nome</th>
                     <th>Email</th>
                     <th>Telefone</th>
                 </tr>
@@ -44,37 +57,5 @@
                 </tr>
             </tbody>
         </table>
-        <!-- <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table> -->
-        <!-- <button class="btn btn-primary btn-novo-grupo" routerLink="/edit-grupo/novo">Novo
-        </button> -->
     </div>
 </div>

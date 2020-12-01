@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { userInfos } from '../../../environments/user-infos' 
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',

@@ -4,7 +4,7 @@
         <button class="btn btn-primary btn-novo-grupo" routerLink="/edit-grupo/novo">Novo
             <!-- <i class="fa fa-plus"></i> -->
         </button>
-        <ul class="list-group">
+        <!-- <ul class="list-group">
             <li class="d-flex flex-wrap list-group-item">
                 <div class="d-flex flex-column w-100">
                     <label for="">Nome</label>
@@ -110,6 +110,47 @@
                     <input type="button" value="Visualizar" routerLink="/edit-grupo/5">
                 </div>
             </li>
-        </ul>
+        </ul> -->
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Nome</th>
+                    <th>Data</th>
+                    <th>Inicio</th>
+                    <th>Fim</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="alert alert-success">
+                    <td>
+                        <button class="btn btn-primary btn-sm btn-edit" routerLink="/edit-grupo/5"><i class="fas fa-edit"></i></button>
+                    </td>
+                    <td>Ibirapuera</td>
+                    <td>23/12/2000</td>
+                    <td>13:30</td>
+                    <td>14:30</td>
+                </tr>
+                <tr class="alert alert-success">
+                    <td>
+                        <button class="btn btn-primary btn-sm btn-edit" routerLink="/edit-grupo/5"><i class="fas fa-edit"></i></button>
+                    </td>
+                    <td>Paulista</td>
+                    <td>23/12/2000</td>
+                    <td>13:30</td>
+                    <td>14:30</td>
+                </tr>
+                <tr class="alert alert-success">
+                    <td>
+                        <button class="btn btn-primary btn-sm btn-edit" routerLink="/edit-grupo/5"><i class="fas fa-edit"></i></button>
+                    </td>
+                    <td>Mercado municipal</td>
+                    <td>23/12/2000</td>
+                    <td>13:30</td>
+                    <td>14:30</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

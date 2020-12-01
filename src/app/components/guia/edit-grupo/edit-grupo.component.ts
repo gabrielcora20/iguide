@@ -10,6 +10,7 @@ export class EditGrupoComponent implements OnInit {
   constructor() { }
 
   grupo: any = {}
+  turista: any = {}
 
   ngOnInit(): void {
   }

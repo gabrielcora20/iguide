@@ -4,6 +4,10 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
     transition: all .3s linear;     
 }
+
+#modalConviteGrupo{
+    margin-top: 172px;
+}
     
 input[type="checkbox"] { /* menu control */
     width: 30px; height: 30px; z-index: 1; margin: 0; outline: none; border: none;
@@ -51,6 +55,9 @@ input:not(:checked) ~ .container-config{
     background-color: transparent;
     border: none;
     color: #fff;
+    left: 11px;
+    bottom: 0px;
+    position: absolute;
 }
 
 .num-msg-nao-lidas{
@@ -70,8 +77,8 @@ input:not(:checked) ~ .container-config{
     border: none;
     color: #fff;
     position: absolute;
-    right: -298px;
-    bottom: -6px;
+    right: -371px;
+    bottom: -5px;
 }
 
 

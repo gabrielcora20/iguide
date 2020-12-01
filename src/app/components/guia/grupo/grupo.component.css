@@ -40,3 +40,21 @@ ul > .item {
     margin: 18px;
     width: 90%;
 }
+
+.table{
+    margin: 15px;
+    width: 92%;
+  }
+
+.table th{
+    font-size: 12px;
+}
+
+.table td{
+    font-size: 12px;
+}
+
+.btn-edit{
+    font-size: 13px;
+    padding: 3px;
+}
