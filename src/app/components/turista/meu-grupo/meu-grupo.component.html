@@ -1,10 +1,10 @@
 <div class="container-main">
     <div class="content">
         <h3 class="cabecalho">Grupo</h3>
-        <button class="btn btn-danger btn-block btn-sair-grupo">Sair do grupo</button>
+        <button class="btn btn-danger btn-block btn-sair-grupo" (click)="saiDoGrupo(grupo)">Sair do grupo</button>
         <div class="container-form">
             <fieldset class="form-group">
-                <input type="text" disabled [(ngModel)]="grupo.guia" class="form-control guia-input">
+                <input type="text" disabled [(ngModel)]="grupo.guiaResponsavel.nome" class="form-control guia-input">
                 <label>Guia Responsável</label>
             </fieldset>
             <fieldset class="form-group">
@@ -31,6 +31,7 @@
         <div class="text-center">
             <h4 class="cabecalho-turistas">Turistas</h4>
         </div>
+
         <table class="table">
             <thead>
                 <tr>
@@ -40,20 +41,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Turista 1</td>
-                    <td>turista1@gmail.com</td>
-                    <td>(11) 11 11111-1111</td>
-                </tr>
-                <tr>
-                    <td>Turista 2</td>
-                    <td>turista2@gmail.com</td>
-                    <td>(11) 11 11111-1111</td>
-                </tr>
-                <tr>
-                    <td>Turista 3</td>
-                    <td>turista3@gmail.com</td>
-                    <td>(11) 11 11111-1111</td>
+                <tr *ngFor="let t of grupo.turistas">
+                    <td>{{t.nome}}</td>
+                    <td>{{t.email}}</td>
+                    <td>{{t.telefone}}</td>
                 </tr>
             </tbody>
         </table>

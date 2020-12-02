@@ -3,7 +3,7 @@
         <h3 class="cabecalho">Grupo</h3>
         <div class="buttons">
             <button class="btn btn-secondary btn-sm" routerLink="/grupo">Voltar</button>
-            <button class="btn btn-primary btn-sm">Salvar</button>
+            <button class="btn btn-primary btn-sm" (click)="salvarGrupo(grupo)">Salvar</button>
         </div>
         <div class="container-form">
             <fieldset class="form-group">
@@ -30,20 +30,21 @@
         <div class="text-center">
             <h4 class="cabecalho-turistas">Turistas</h4>
 
-            <button class="btn btn-primary btn-sm btn-adicionar-turista">Novo</button>
+            <button class="btn btn-danger btn-sm btn-adicionar-turista" *ngIf="adicaoTuristaAtiva" (click)="escondeAdicaoTurista()">Cancelar</button>
+            <button class="btn btn-primary btn-sm btn-adicionar-turista" *ngIf="!adicaoTuristaAtiva" (click)="exibeAdicaoTurista()">Novo</button>
         </div>
 
-        <div class="row">
+        <div class="row" *ngIf="adicaoTuristaAtiva">
             <div class="col-8">
                 <div class="container-form">
                     <fieldset class="form-group">
-                        <input type="text" [(ngModel)]="turista.email" class="form-control email-turista-input">
+                        <input type="text" [(ngModel)]="emailTurista" class="form-control email-turista-input">
                         <label>E-mail</label>
                     </fieldset>
                 </div>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-primary btn-convidar-turista">Convidar</button>
+                <button type="button" class="btn btn-primary btn-convidar-turista" (click)="adicionarTurista(emailTurista)">Convidar</button>
             </div>
         </div>
         
@@ -59,66 +60,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let t of grupo.turistas">
                     <td>
-                        <button class="btn btn-danger btn-sm btn-remove"><i class="fas fa-trash"></i></button>
+                        <button class="btn btn-danger btn-sm btn-remove" (click)="removerTurista(t)"><i class="fas fa-trash"></i></button>
                     </td>
-                    <td>Turista 1</td>
-                    <td>turista1@gmail.com</td>
-                    <td>(11) 11 11111-1111</td>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="btn btn-danger btn-sm btn-remove"><i class="fas fa-trash"></i></button>
-                    </td>
-                    <td>Turista 2</td>
-                    <td>turista2@gmail.com</td>
-                    <td>(11) 11 11111-1111</td>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="btn btn-danger btn-sm btn-remove"><i class="fas fa-trash"></i></button>
-                    </td>
-                    <td>Turista 3</td>
-                    <td>turista3@gmail.com</td>
-                    <td>(11) 11 11111-1111</td>
+                    <td>{{t.nome}}</td>
+                    <td>{{t.email}}</td>
+                    <td>{{t.telefone}}</td>
                 </tr>
             </tbody>
         </table>
 
-        <button class="btn btn-danger btn-sm btn-block btn-encerrar">Encerrar</button>
-
-        <!-- <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table> -->
-        <!-- <button class="btn btn-primary btn-novo-grupo" routerLink="/edit-grupo/novo">Novo
-        </button> -->
+        <button class="btn btn-danger btn-sm btn-block btn-encerrar" *ngIf="exibeBotaoEncerrar" (click)="encerraGrupo(grupo)">Encerrar</button>
     </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { userInfos } from 'src/environments/user-infos';
 
 @Component({
   selector: 'app-meu-grupo',
@@ -7,14 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeuGrupoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  grupo: any = {
-    nome: 'Ibirapuera',
-    descricao: 'Passeio ao Parque do Ibirapuera'
-  }
+  grupo: any = {}
 
   ngOnInit(): void {
+    this.grupo = userInfos.turistas.filter(t => t.id == userInfos.usuarioAtivo)[0].meuGrupo;
+  }
+
+  saiDoGrupo(grupo){
+    userInfos.grupos.map(g => {
+      if(g.id == grupo.id)
+        g.turistas = g.turistas.filter(t => t.id != userInfos.usuarioAtivo);
+      return g;
+    });
+
+    userInfos.turistas.map(t => {
+      if(t.id == userInfos.usuarioAtivo)
+        t.meuGrupo = null;
+      return t;
+    });
+
+    this.router.navigate(['/home']);
   }
 
 }
