@@ -90,6 +90,8 @@
   .messages .message.left .avatar {
     background-color: #f5886e;
     float: left;
+    padding-left: 8px;
+    padding-top: 15px;
   }
   .messages .message.left .text_wrapper {
     background-color: #ffe6cb;
@@ -105,6 +107,8 @@
   .messages .message.right .avatar {
     background-color: #fdbf68;
     float: right;
+    padding-left: 10px;
+    padding-top: 15px;
   }
   .messages .message.right .text_wrapper {
     background-color: #c7eafc;

@@ -48,6 +48,9 @@ export class EditGrupoComponent implements OnInit {
   adicionarTurista(emailTurista) {
     var turista = userInfos.turistas.filter(t => t.email == emailTurista)[0];
 
+    if(turista.meuGrupo != null || turista.meuGrupo.id)
+      return;
+
     if (turista)
       this.grupo.turistas.push(turista);
 
@@ -88,6 +91,8 @@ export class EditGrupoComponent implements OnInit {
           tM.meuGrupo = null;
       });
     });
+
+    userInfos.mensagens = [];
 
     this.router.navigate(['/grupo']);
   }

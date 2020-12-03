@@ -3,13 +3,13 @@
         <h3 class="cabecalho">Chat do Grupo</h3>
         <div class="chat_window">
             <ul class="messages">
-                <li class="message left appeared">
-                    <div class="avatar"></div>
+                <li *ngFor="let m of mensagens" class="message appeared" [ngClass]="{'left': m.idUsuario != idUsuario || m.tipoUsuario != tipoUsuario, 'right': m.idUsuario == idUsuario && m.tipoUsuario == tipoUsuario }">
+                    <div class="avatar">{{m.usuario}}</div>
                     <div class="text_wrapper">
-                        <div class="text">Hello Philip! :)</div>
+                        <div class="text">{{m.texto}}</div>
                     </div>
                 </li>
-                <li class="message right appeared">
+                <!-- <li class="message right appeared">
                     <div class="avatar"></div>
                     <div class="text_wrapper">
                         <div class="text">Hi Sandy! How are you?</div>
@@ -20,13 +20,13 @@
                     <div class="text_wrapper">
                         <div class="text">I'm fine, thank you!</div>
                     </div>
-                </li>
+                </li> -->
             </ul>
             <div class="bottom_wrapper clearfix">
                 <div class="message_input_wrapper">
-                    <input class="message_input" placeholder="Digite uma mensagem..." />
+                    <input class="message_input" [(ngModel)]="conteudoMensagem" placeholder="Digite uma mensagem..." />
                 </div>
-                <div class="send_message">
+                <div class="send_message" (click)="adicionaMensagem(conteudoMensagem)">
                     <div class="icon"></div>
                     <div class="text"><i class="fa fa-paper-plane"></i></div>
                 </div>

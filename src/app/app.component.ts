@@ -48,7 +48,6 @@ export class AppComponent {
   recusaConviteGrupo(grupo) {
     userInfos.turistas.forEach(tM => {
       if (tM.id == userInfos.usuarioAtivo){
-        debugger
         tM.meuGrupo = null;
         this.defineVisaoBotoes(tM);
         

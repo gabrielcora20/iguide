@@ -5,6 +5,38 @@ export let userInfos = {
     "maiorIdGrupo": 1,
     "maiorIdGuia": 1,
     "maiorIdTurista": 1,
+    "mensagens":[
+        {
+            "idUsuario": 1,
+            "tipoUsuario": false,
+            "usuario": "turista",
+            "texto": "Olá"
+        },
+        {
+            "idUsuario": 1,
+            "tipoUsuario": true,
+            "usuario": "guia",
+            "texto": "Olá, tudo bem?"
+        },
+        {
+            "idUsuario": 1,
+            "tipoUsuario": false,
+            "usuario": "turista",
+            "texto": "Tudo, e com você?"
+        },
+        {
+            "idUsuario": 1,
+            "tipoUsuario": true,
+            "usuario": "guia",
+            "texto": "Tudo bem também"
+        },
+        {
+            "idUsuario": 1,
+            "tipoUsuario": false,
+            "usuario": "turista",
+            "texto": "Onde nos encontraremos"
+        }
+    ],
     "grupos": [
         {
             "id": 1,
