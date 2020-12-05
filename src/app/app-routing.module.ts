@@ -5,6 +5,7 @@ import { EditGrupoComponent } from './components/guia/edit-grupo/edit-grupo.comp
 import { GrupoComponent } from './components/guia/grupo/grupo.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { MapaComponent } from './components/mapa/mapa.component';
 import { MeuGrupoComponent } from './components/turista/meu-grupo/meu-grupo.component';
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'grupo', component: GrupoComponent },
   { path: 'edit-grupo/:id', component: EditGrupoComponent },
   { path: 'meu-grupo', component: MeuGrupoComponent },
-  { path: 'chat', component: ChatComponent }
+  { path: 'chat', component: ChatComponent },
+  { path: 'mapa', component: MapaComponent }
 ];
 
 @NgModule({

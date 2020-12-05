@@ -25,8 +25,10 @@ export class MeuGrupoComponent implements OnInit {
     });
 
     userInfos.turistas.map(t => {
-      if(t.id == userInfos.usuarioAtivo)
+      if(t.id == userInfos.usuarioAtivo){
         t.meuGrupo = null;
+        userInfos.homeListener.next(t);
+      }
       return t;
     });
 

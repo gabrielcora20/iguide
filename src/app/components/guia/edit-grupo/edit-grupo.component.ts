@@ -48,7 +48,7 @@ export class EditGrupoComponent implements OnInit {
   adicionarTurista(emailTurista) {
     var turista = userInfos.turistas.filter(t => t.email == emailTurista)[0];
 
-    if(turista.meuGrupo != null || turista.meuGrupo.id)
+    if(turista.meuGrupo != null)
       return;
 
     if (turista)
@@ -63,8 +63,10 @@ export class EditGrupoComponent implements OnInit {
 
   removerTurista(turista) {
     userInfos.turistas.forEach(tM => {
-      if (tM.id == turista.id)
+      if (tM.id == turista.id){
         tM.meuGrupo = null;
+        userInfos.homeListener.next(tM); 
+      }
     });
 
     this.grupo.turistas = this.grupo.turistas.filter(t => t.id != turista.id);
@@ -87,8 +89,10 @@ export class EditGrupoComponent implements OnInit {
 
     grupo.turistas.forEach(t => {
       userInfos.turistas.forEach(tM => {
-        if (tM.id == t.id)
+        if (tM.id == t.id){
           tM.meuGrupo = null;
+          userInfos.homeListener.next(tM); 
+        }
       });
     });
 

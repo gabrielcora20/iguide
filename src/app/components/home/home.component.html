@@ -9,21 +9,21 @@
     <div class="carousel-inner">
       
       <div class="carousel-item active" *ngIf="userInfos.tipoUsuario">
-        <img src="./assets/img/foto_masp.jpeg" class="d-block w-100" alt="...">
+        <img src="./assets/img/slide-mapa.jpeg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-md-block">
           <h5>Você está localizado em São Paulo, na região da Avenida Paulista</h5>
           <p>Visualize em tempo real onde estão os turistas integrantes de seu grupo</p>
           <!-- <button class="btn btn-primary" routerLink="/guia">Vamos lá</button> -->
-          <button class="btn btn-primary">Vamos lá</button>
+          <button class="btn btn-primary" routerLink="/mapa">Vamos lá</button>
         </div>
       </div>
 
       <div class="carousel-item active" *ngIf="!userInfos.tipoUsuario">
-        <img src="./assets/img/foto_masp.jpeg" class="d-block w-100" alt="...">
+        <img src="./assets/img/slide-mapa.jpeg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-md-block">
           <h5>Você é integrante de um grupo que está localizado em São Paulo, na região da Avenida Paulista</h5>
           <p>Visualize informações sobre seu grupo</p>
-          <button class="btn btn-primary" routerLink="/meu-grupo">Vamos lá</button>
+          <button class="btn btn-primary" routerLink="/mapa">Vamos lá</button>
         </div>
       </div>
 

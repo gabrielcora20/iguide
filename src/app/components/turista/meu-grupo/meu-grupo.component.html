@@ -15,9 +15,17 @@
                 <input type="text" disabled [(ngModel)]="grupo.descricao" class="form-control descricao-input">
                 <label>Descrição do Trajeto</label>
             </fieldset>
-            <fieldset class="form-group">
+            <!-- <fieldset class="form-group">
                 <input type="date" disabled [(ngModel)]="grupo.dataTrajeto" class="form-control data-input">
                 <label>Data do Trajeto</label>
+            </fieldset> -->
+            <fieldset class="form-group">
+                <input type="date" disabled [(ngModel)]="grupo.dataInicioTrajeto" class="form-control data-input">
+                <label>Data de Inicio do Trajeto</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="date" disabled [(ngModel)]="grupo.dataFimTrajeto" class="form-control data-input">
+                <label>Data de Término do Trajeto</label>
             </fieldset>
             <fieldset class="form-group">
                 <input type="text" disabled [(ngModel)]="grupo.horarioInicio" class="form-control horario-inicio-input">

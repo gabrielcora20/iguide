@@ -15,8 +15,12 @@
                 <label>Descrição do Trajeto</label>
             </fieldset>
             <fieldset class="form-group">
-                <input type="date" [(ngModel)]="grupo.dataTrajeto" class="form-control data-input">
-                <label>Data do Trajeto</label>
+                <input type="date" [(ngModel)]="grupo.dataInicioTrajeto" class="form-control data-input">
+                <label>Data de Inicio do Trajeto</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="date" [(ngModel)]="grupo.dataFimTrajeto" class="form-control data-input">
+                <label>Data de Término do Trajeto</label>
             </fieldset>
             <fieldset class="form-group">
                 <input type="text" [(ngModel)]="grupo.horarioInicio" class="form-control horario-inicio-input">
@@ -30,8 +34,8 @@
         <div class="text-center">
             <h4 class="cabecalho-turistas">Turistas</h4>
 
-            <button class="btn btn-danger btn-sm btn-adicionar-turista" *ngIf="adicaoTuristaAtiva" (click)="escondeAdicaoTurista()">Cancelar</button>
-            <button class="btn btn-primary btn-sm btn-adicionar-turista" *ngIf="!adicaoTuristaAtiva" (click)="exibeAdicaoTurista()">Novo</button>
+            <button class="btn btn-danger btn-sm btn-adicionar-turista" *ngIf="adicaoTuristaAtiva && exibeBotaoEncerrar" (click)="escondeAdicaoTurista()">Cancelar</button>
+            <button class="btn btn-primary btn-sm btn-adicionar-turista" *ngIf="!adicaoTuristaAtiva && exibeBotaoEncerrar" (click)="exibeAdicaoTurista()">Novo</button>
         </div>
 
         <div class="row" *ngIf="adicaoTuristaAtiva">
@@ -53,7 +57,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th></th>
+                    <th *ngIf="exibeBotaoEncerrar"></th>
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Telefone</th>
@@ -61,7 +65,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let t of grupo.turistas">
-                    <td>
+                    <td *ngIf="exibeBotaoEncerrar">
                         <button class="btn btn-danger btn-sm btn-remove" (click)="removerTurista(t)"><i class="fas fa-trash"></i></button>
                     </td>
                     <td>{{t.nome}}</td>

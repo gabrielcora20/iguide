@@ -10,6 +10,7 @@ import { GrupoComponent } from './components/guia/grupo/grupo.component';
 import { EditGrupoComponent } from './components/guia/edit-grupo/edit-grupo.component';
 import { MeuGrupoComponent } from './components/turista/meu-grupo/meu-grupo.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { MapaComponent } from './components/mapa/mapa.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ChatComponent } from './components/chat/chat.component';
     GrupoComponent,
     EditGrupoComponent,
     MeuGrupoComponent,
-    ChatComponent
+    ChatComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,

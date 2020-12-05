@@ -12,5 +12,53 @@
             <label>Senha</label>
         </fieldset>
         <button (click)="validaLogin(usuario)" class="btn btn-primary btn-block">Entrar</button>
+        <div class="col-12 text-center link-cadastro">
+            <a data-toggle="modal" data-target="#modalCadastroUsuario">Cadastre-se clicando aqui</a>
+        </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalCadastroUsuario" tabindex="-1" role="dialog" aria-labelledby="modalCadastroUsuarioLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCadastroUsuarioLabel">Cadastro de novo usuário</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-form">
+                        <fieldset class="form-group">
+                            <select [(ngModel)]="tipoUsuario" class="form-control">
+                                <option value="turista" selected>Turista</option>
+                                <option value="guia">Guia</option>
+                            </select>
+                            <label>Tipo de usuário</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="text" [(ngModel)]="usuario.nome" class="form-control">
+                            <label>Nome</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="email" [(ngModel)]="usuario.email" class="form-control">
+                            <label>Email</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="password" [(ngModel)]="usuario.senha" class="form-control">
+                            <label>Senha</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="tel" [(ngModel)]="usuario.telefone" class="form-control">
+                            <label>Telefone</label>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                    <button type="button" class="btn btn-primary" (click)="confirmaCadastroUsuario(usuario)" data-dismiss="modal">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>

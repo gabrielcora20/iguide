@@ -40,9 +40,25 @@
   }
 
   input{
-    padding-left: 73px;
+    padding-left: 90px;
+  }
+  
+  select{
+    padding-left: 130px;
   }
 
   input:focus {
     padding-left: 12px;
   }
+  
+  select:focus {
+    padding-left: 12px;
+  }
+
+  .link-cadastro{
+    margin-top: 20px;
+  }
+
+  #modalCadastroUsuario{
+    margin-top: 172px;
+}

@@ -10,6 +10,7 @@ import { userInfos } from './../../../environments/user-infos'
 export class LoginComponent implements OnInit {
 
   usuario: any = {}
+  tipoUsuario: string = ''
 
   constructor(private router: Router) { }
 
@@ -17,14 +18,37 @@ export class LoginComponent implements OnInit {
   }
 
   validaLogin(usuario: any): void {
-    // console.log(this.usuario);
-    if (usuario.email && usuario.email.includes('turista'))
+    var turista = userInfos.turistas.filter(t => t.email == usuario.email && t.senha == usuario.senha)[0];
+
+    if (turista) {
       userInfos.tipoUsuario = false;
-    else
+      userInfos.logado = true;
+      userInfos.homeListener.next(turista);
+      userInfos.usuarioAtivo = turista.id;
+      this.router.navigate(['/home']);
+    }
+
+    var guia = userInfos.guias.filter(g => g.email == usuario.email && g.senha == usuario.senha)[0];
+
+    if (guia) {
       userInfos.tipoUsuario = true;
+      userInfos.logado = true;
+      userInfos.usuarioAtivo = guia.id;
+      this.router.navigate(['/home']);
+    }
+  }
 
-    userInfos.logado = true;
+  confirmaCadastroUsuario(usuario) {
 
-    this.router.navigate(['/home']);
+    if (this.tipoUsuario == 'turista') {
+      usuario.id = userInfos.maiorIdTurista + 1;
+      userInfos.maiorIdTurista = usuario.id;
+      userInfos.turistas.push(usuario);
+    }
+    else{
+      usuario.id = userInfos.maiorIdGuia + 1;
+      userInfos.maiorIdGuia = usuario.id;
+      userInfos.guias.push(usuario);
+    }
   }
 }

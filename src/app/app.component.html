@@ -45,7 +45,7 @@
     <div class="container-config">
         <!-- <a class="btn btn-secondary">Configurações <i class="fa fa-cogs"></i></a> -->
         <a class="btn btn-secondary btn-chat" routerLink="/chat" *ngIf="exibirBotaoChat || userInfos.tipoUsuario"><i class="fa fa-comments"></i> <span
-                class="badge badge-danger num-msg-nao-lidas">5</span></a>
+                class="badge badge-danger num-msg-nao-lidas">{{numeroMensagens}}</span></a>
         <a class="btn btn-secondary btn-chat" *ngIf="!userInfos.tipoUsuario && !exibirBotaoChat" data-toggle="modal" data-target="#modalConviteGrupo"><i
                 class="fas fa-person-booth"></i><span class="badge badge-danger num-msg-nao-lidas" *ngIf="conviteDisponivel">!</span></a>
         <a class="btn btn-secondary btn-log-off" (click)="deslogar()"><i class="fa fa-power-off"></i></a>
@@ -69,7 +69,7 @@
                     <div class="text-center" *ngIf="!conviteDisponivel">
                         <p>Nenhum convite disponível</p>
                     </div>
-                    <div class="container-form" *ngIf="conviteDisponivel">
+                    <div class="container-form" *ngIf="conviteDisponivel && grupo">
                         <fieldset class="form-group">
                             <!-- <input type="text" disabled [(ngModel)]="grupo.guia" class="form-control guia-input"> -->
                             <label>Guia Responsável: {{grupo.guiaResponsavel.nome}}</label>
