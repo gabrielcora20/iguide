@@ -31,11 +31,11 @@
                 <label>Horário de Término</label>
             </fieldset>
         </div>
-        <div class="text-center">
+        <div class="text-center" *ngIf="exibeBotaoEncerrar">
             <h4 class="cabecalho-turistas">Turistas</h4>
 
             <button class="btn btn-danger btn-sm btn-adicionar-turista" *ngIf="adicaoTuristaAtiva && exibeBotaoEncerrar" (click)="escondeAdicaoTurista()">Cancelar</button>
-            <button class="btn btn-primary btn-sm btn-adicionar-turista" *ngIf="!adicaoTuristaAtiva && exibeBotaoEncerrar" (click)="exibeAdicaoTurista()">Novo</button>
+            <button class="btn btn-primary btn-sm btn-adicionar-turista" *ngIf="!adicaoTuristaAtiva && exibeBotaoEncerrar" (click)="exibeAdicaoTurista()">Convidar Turista</button>
         </div>
 
         <div class="row" *ngIf="adicaoTuristaAtiva">
@@ -54,7 +54,7 @@
         
 
 
-        <table class="table">
+        <table class="table" *ngIf="exibeBotaoEncerrar">
             <thead>
                 <tr>
                     <th *ngIf="exibeBotaoEncerrar"></th>

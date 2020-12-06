@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let g of grupos" class="alert" [ngClass]="{'alert-success': g.encerrado}">
+                <tr *ngFor="let g of grupos" class="alert" [ngClass]="{'alert-danger': g.encerrado}">
                     <td>
                         <button class="btn btn-primary btn-sm btn-edit" routerLink="/edit-grupo/{{g.id}}"><i class="fas fa-edit"></i></button>
                     </td>
