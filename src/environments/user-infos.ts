@@ -6,8 +6,8 @@ export let userInfos = {
     "homeListener": new BehaviorSubject<any>(true),
     "usuarioAtivo": 1,
     "maiorIdGrupo": 1,
-    "maiorIdGuia": 1,
-    "maiorIdTurista": 1,
+    "maiorIdGuia": 2,
+    "maiorIdTurista": 2,
     "mensagens":[
         {
             "idUsuario": 1,
@@ -97,6 +97,14 @@ export let userInfos = {
                 "horarioFim": "14:50",
                 "conviteAceito": false
             }
+        },
+        {
+            "id": 2,
+            "nome": "turista 2",
+            "email": "turista2@gmail.com",
+            "telefone": "11111-1111",
+            "senha": "1234",
+            "meuGrupo": null
         }
     ],
     "guias": [
@@ -104,6 +112,13 @@ export let userInfos = {
             "id": 1,
             "nome": "guia",
             "email": "guia@gmail.com",
+            "telefone": "11111-1111",
+            "senha": "1234"
+        },
+        {
+            "id": 2,
+            "nome": "guia 2",
+            "email": "guia2@gmail.com",
             "telefone": "11111-1111",
             "senha": "1234"
         }
